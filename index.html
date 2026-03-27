@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+   <div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white w-full max-w-md p-6 rounded-lg shadow">
+
+    <!-- Title -->
+    <h1 class="text-2xl font-bold text-center mb-4">Todo App</h1>
+
+    <!-- Input + Button -->
+    <div class="flex gap-2 mb-4">
+      <input 
+        id="todo-input"
+        type="text" 
+        placeholder="Enter a task..."
+        class="flex-1 border p-2 rounded outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button 
+        id="add-btn"
+        class="bg-blue-500 text-white px-4 rounded hover:bg-blue-600"
+      >
+        Add
+      </button>
+    </div>
+
+    <!-- Todo List -->
+    <div id="todo-list" class="space-y-2">
+      <div class="flex items-center justify-between border p-2 rounded">
+  <div class="flex items-center gap-2">
+    <input type="checkbox" />
+    <span>Learn JavaScript</span>
+  </div>
+  <button class="px-4 bg-red-500 hover:bg-red-700  text-black-500 rounded">Delete</button>
+</div>
+
+<div class="flex items-center justify-between border p-2 rounded">
+  <div class="flex items-center gap-2">
+    <input type="checkbox" />
+    <span>Build Todo App</span>
+  </div>
+  <button class="px-4 bg-red-500 hover:bg-red-700  text-black-500 rounded">Delete</button>
+</div>
+    </div>
+
+  </div>
+</div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
