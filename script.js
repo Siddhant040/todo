@@ -1,4 +1,5 @@
 let todos = [];
+let filter = "all"
 
 
 // get the todos from local storage
@@ -48,6 +49,19 @@ addBTN.addEventListener("click", () => {
 
 })
 
+const alltodo = document.getElementById("all-btn").addEventListener("click", ()=>{
+    filter = "all"
+    rendertodos()
+})
+const completedtodo = document.getElementById("cmplt-btn").addEventListener("click", ()=>{
+    filter = "completed"
+    rendertodos()
+})
+const uncompletedtodo = document.getElementById("active-btn").addEventListener("click", ()=>{
+    filter = "active"
+    rendertodos()
+})
+
 
 
 
@@ -59,8 +73,14 @@ function rendertodos() {
     const list = document.getElementById("todo-list")
     // clear the list
     list.innerHTML = ""
+    let filteredtodos = todos
+    if (filter === "completed") {
+        filteredtodos = todos.filter((todo) => todo.completed)
+    } else if (filter === "active") {
+        filteredtodos = todos.filter((todo) => !todo.completed)
+    }
     // render the todos
-    todos.forEach((todo) => {
+    filteredtodos.forEach((todo) => {
         //wrapper 
         const div = document.createElement("div")
         div.className = "flex items-center justify-between border p-2 rounded"
@@ -94,6 +114,9 @@ function rendertodos() {
             rendertodos()
             saveTodo()
         })
+        
+
+
 
         //structure
         left.appendChild(checkbox)
